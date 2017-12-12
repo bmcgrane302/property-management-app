@@ -12,6 +12,8 @@ export const REPAIR_COMPLETE_PENDING = 'REPAIR_COMPLETE_PENDING'
 export const REPAIR_COMPLETE_SUCCESS = 'REPAIR_COMPLETE_SUCCESS'
 export const RENEWAL_REMOVED_PENDING = 'RENEWAL_REMOVED_PENDING'
 export const RENEWAL_REMOVED_SUCCESS = 'RENEWAL_REMOVED_SUCCESS'
+export const RENT_PAID_PENDING = 'RENT_PAID_PENDING'
+export const RENT_PAID_SUCCESS = 'RENT_PAID_SUCCESS'
 
 export const getProperties = () => {
   return async (dispatch) => {
@@ -74,6 +76,17 @@ export const renewalRemoved = (id) => {
     let properties = await axios.patch(`http://localhost:8000/removerenewal/${id}`)
     dispatch({
       type: RENEWAL_REMOVED_SUCCESS,
+      payload: properties
+    })
+  }
+}
+
+export const rentPaid = (id) => {
+  return async (dispatch) => {
+    dispatch({type: RENT_PAID_PENDING})
+    let properties = await axios.patch(`http://localhost:8000/paid/${id}`)
+    dispatch({
+      type:RENT_PAID_SUCCESS,
       payload: properties
     })
   }

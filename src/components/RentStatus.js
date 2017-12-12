@@ -1,32 +1,54 @@
 import React, { Component } from 'react';
-import { Col, Card, CardBody, CardSubtitle, Container } from 'reactstrap';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Button, Card, CardBody, CardSubtitle, Row, Col, Container, CardText } from 'reactstrap';
+import { rentPaid } from '../actions/properties';
 
 
 class RentStatus extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault()
+    this.props.rentPaid(this.props.property.id)
+
+  }
+
   render () {
+
+
     return (
-      <div>
-        <Container>
-         <Card>
-           <CardBody>
-             <CardSubtitle>Repairs</CardSubtitle>
-           </CardBody>
-           <CardBody className="text-left">
 
-           </CardBody>
-         </Card>
-         <Card>
-           <CardBody>
-             <CardSubtitle>Renewal Notices</CardSubtitle>
-           </CardBody>
-           <CardBody className="text-left">
-
-           </CardBody>
-         </Card>
-       </Container>
-      </div>
+      <Container>
+          <Row>
+             <Col sm="10">
+               <CardSubtitle >{this.props.property.address}:
+                 {this.props.property.rent_paid?<CardText style={{color: 'green' }}>PAID</CardText> :
+                 <CardText style={{color: 'red' }}>UNPAID</CardText>}
+               </CardSubtitle>
+             </Col>
+             <Col sm="2">
+                {this.props.property.rent_paid?'':<Button
+                  onClick={this.handleClick}
+                  size="sm"
+                  outline
+                  color="success">
+                  $</Button>}
+             </Col>
+          </Row>
+      </Container>
     )
   }
 }
 
-export default RentStatus
+function mapStateToProps(store, thisComponentsProps){
+  return {properties: store.properties}
+}
+
+function mapDispatchToProps(dispatch){
+   return{
+     rentPaid: bindActionCreators(rentPaid, dispatch),
+
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (RentStatus);

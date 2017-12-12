@@ -28,6 +28,15 @@ class Notifications extends Component {
       )
     })
 
+    let propList = this.props.properties.sort((a,b)=> a.id-b.id).map(property => {
+      return (
+        <Col key={property.id} md={12}>
+         <RentStatus property={property} />
+       </Col>
+      )
+    })
+    console.log('prop list', propList);
+
     return (
       <Container>
         <Card>
@@ -35,7 +44,7 @@ class Notifications extends Component {
             <CardSubtitle>Rent status</CardSubtitle>
           </CardBody>
           <CardBody className="text-left">
-
+            {propList}
           </CardBody>
         </Card>
        <Card>

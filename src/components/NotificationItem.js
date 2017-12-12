@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Button, Card, CardBody, CardSubtitle, Row, Col, Container } from 'reactstrap';
+import { Button, Card, CardBody, CardSubtitle, Row, Col, Container, CardText } from 'reactstrap';
 import { repairComplete } from '../actions/properties';
 
 
@@ -17,10 +17,11 @@ class NotificationItem extends Component {
     return (
 
       <Container>
+
           <Row>
              <Col sm="9">
                <CardSubtitle >{this.props.repair.address}</CardSubtitle>
-               <CardSubtitle>{this.props.repair.repair_description}</CardSubtitle>
+                <CardText>{this.props.repair.repair_description}</CardText>
              </Col>
              <Col sm="3">
                <Button
@@ -31,6 +32,7 @@ class NotificationItem extends Component {
                  complete</Button>
              </Col>
           </Row>
+           
       </Container>
     )
   }
