@@ -25,6 +25,12 @@ class AddPropForm extends Component {
          repair_description:'none',
    }
 
+   handleSubmit = (e) => {
+     console.log('button working');
+     e.preventDefault()
+     this.props.addProperty(this.state)
+   }
+
   render () {
 
     return (

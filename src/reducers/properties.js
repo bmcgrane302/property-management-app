@@ -1,5 +1,6 @@
 import { GET_PROPERTIES_PENDING, GET_PROPERTIES_SUCCESS,
-         ADD_PROPERTY_PENDING, ADD_PROPRETY_SUCCESS
+         ADD_PROPERTY_PENDING, ADD_PROPRETY_SUCCESS,
+         REMOVE_PROPERTY_PENDING, REMOVE_PROPERTY_SUCCESS
        } from '../actions/properties'
 
 
@@ -13,6 +14,10 @@ export default(state=[], action) => {
      return state;
     case ADD_PROPRETY_SUCCESS:
      return [...action.payload.data];
+    case REMOVE_PROPERTY_PENDING:
+     return state;
+    case REMOVE_PROPERTY_SUCCESS:
+      return [...action.payload.data];
     default:
      return state;
   }
