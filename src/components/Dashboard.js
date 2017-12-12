@@ -10,13 +10,21 @@ import { Container, Row, Col, InputGroup, Input, Button } from 'reactstrap';
 
 
 class Dashboard extends Component {
+  state = {
+    filterTitle: ''
+  }
+
+  handleChange = (e) => {
+    this.setState({filterTitle: e.target.value})
+  }
 
 
 
   render () {
-     console.log('state', this.props.properties);
+    let filterList = this.state.filterTitle !== ''?this.props.properties.filter((item)=> item.address.startsWith(this.state.filterTitle)):this.props.properties;
+     console.log('filter', filterList);
 
-     let propertyList = this.props.properties.sort((a,b)=> a.id-b.id).map(property => {
+     let propertyList = filterList.sort((a,b)=> a.id-b.id).map(property => {
        return (
          <Col key={property.id} md={12}>
           <Property property={property} />
@@ -29,6 +37,13 @@ class Dashboard extends Component {
         <TopNav />
         <Row>
           <Col sm='8'>
+            <Container>
+              <InputGroup>
+                <Input
+                  onChange={this.handleChange} type="search"
+                  placeholder="search for property" />
+              </InputGroup>
+            </Container>
              {propertyList}
           </Col>
           <Col sm='4'>
