@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addProperty } from '../actions/properties';
+import { editProperty } from '../actions/properties';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
@@ -8,7 +8,7 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
 
 
-class AddPropForm extends Component {
+class EditProperty extends Component {
    state = {
          address: '',
          unit: '',
@@ -28,12 +28,14 @@ class AddPropForm extends Component {
    }
 
    handleSubmit = (e) => {
-     console.log('button working');
+     console.log('edit working', e);
      e.preventDefault()
-     this.props.addProperty(this.state)
+     this.props.editProperty(this.state)
    }
 
+
   render () {
+
 
     return (
         <Card>
@@ -48,7 +50,7 @@ class AddPropForm extends Component {
                        id="address"
                        onChange={(e)=> this.setState({address: e.target.value})}
                        value={this.state.address}
-                       placeholder='address'
+                       placeholder=''
                         />
                    </FormGroup>
                  </Col>
@@ -169,8 +171,7 @@ class AddPropForm extends Component {
                       </FormGroup>
                     </Col>
                    </Row>
-                   <Button  type='submit'>Submit</Button>
-                   <Button  href='./dash'>Dashboard</Button>
+                   <Button type='submit'>Submit</Button>
                </Form>
              </Container>
            </CardBody>
@@ -179,11 +180,17 @@ class AddPropForm extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+   return {
+     properties: state.properties
+   }
+}
 
 function mapDispatchToProps(dispatch) {
     return {
-      addProperty: bindActionCreators(addProperty, dispatch)
+
+       editProperty: bindActionCreators(editProperty, dispatch)
     }
   }
 
-  export default connect(null, mapDispatchToProps) (AddPropForm);
+  export default connect(mapStateToProps, mapDispatchToProps) (EditProperty);

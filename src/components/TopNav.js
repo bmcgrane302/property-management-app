@@ -7,8 +7,9 @@ class TopNav extends Component {
     return (
       <div>
         <Navbar color="faded" light>
-           <NavbarBrand href="/" className="mr-auto">APP NAME</NavbarBrand>
-            <h4>DATE</h4>
+           <NavbarBrand href="/add" className="mr-auto">Create Property</NavbarBrand>
+           <NavbarBrand href="/" className="mr-auto">Home</NavbarBrand>
+           <NavbarBrand   className="mr-auto">Date</NavbarBrand>
          </Navbar>
       </div>
     )

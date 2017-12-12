@@ -5,7 +5,7 @@ class SplashPage extends Component {
   render () {
     return (
       <div>
-        <p>slash</p>
+        <p>splash</p>
         <Button href='./dash' outline color="secondary">ENTER</Button>
       </div>
     )

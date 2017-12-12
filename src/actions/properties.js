@@ -6,6 +6,8 @@ export const ADD_PROPERTY_PENDING = 'ADD_PROPERTY_PENDING'
 export const ADD_PROPRETY_SUCCESS = 'ADD_PROPRETY_SUCCESS'
 export const REMOVE_PROPERTY_PENDING = 'REMOVE_PROPERTY_PENDING'
 export const REMOVE_PROPERTY_SUCCESS = 'REMOVE_PROPERTY_SUCCESS'
+export const EDIT_PROPERTY_PENDING = 'EDIT_PROPERTY_PENDING'
+export const EDIT_PROPERTY_SUCCESS = 'EDIT_PROPERTY_SUCCESS'
 
 
 export const getProperties = () => {
@@ -36,6 +38,17 @@ export const removeProperty = (id) => {
     let properties = await axios.delete(`http://localhost:8000/${id}`)
     dispatch({
       type: REMOVE_PROPERTY_SUCCESS,
+      payload: properties
+    })
+  }
+}
+
+export const editProperty = (id) => {
+  return async (dispatch) => {
+    dispatch({type: EDIT_PROPERTY_PENDING})
+    let properties = await axios.patch(`http://localhost:8000/${id}/update`)
+    dispatch({
+      type: EDIT_PROPERTY_SUCCESS,
       payload: properties
     })
   }

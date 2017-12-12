@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { getProperties } from './actions/properties';
 import Dashboard from './components/Dashboard';
 import SplashPage from './components/SplashPage';
+import EditProperty from './components/EditProperty';
+import AddPropForm from './components/AddPropForm';
 import {
   BrowserRouter as Router,
   Route,
@@ -26,6 +28,8 @@ class App extends Component {
           <Switch>
              <Route exact path="/" component={SplashPage} />
              <Route exact path="/dash" component={Dashboard} />
+             <Route exact path="/edit" component={EditProperty} />
+             <Route exact path="/add" component={AddPropForm} />
 
           </Switch>
         </Router>
