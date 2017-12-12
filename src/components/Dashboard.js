@@ -27,7 +27,8 @@ class Dashboard extends Component {
      let propertyList = filterList.sort((a,b)=> a.id-b.id).map(property => {
        return (
          <Col key={property.id} md={12}>
-          <Property property={property} />
+          <Property property={property}/>
+           
         </Col>
        )
      })

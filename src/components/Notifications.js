@@ -28,7 +28,7 @@ class Notifications extends Component {
       )
     })
 
-    let propList = this.props.properties.sort((a,b)=> a.id-b.id).map(property => {
+    let propList = this.props.properties.sort((a,b)=> a.paid-b.paid).map(property => {
       return (
         <Col key={property.id} md={12}>
          <RentStatus property={property} />
