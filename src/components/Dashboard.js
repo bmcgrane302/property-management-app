@@ -32,7 +32,6 @@ class Dashboard extends Component {
              {propertyList}
           </Col>
           <Col sm='4'>
-            <RentStatus />
             <Notifications />
           </Col>
         </Row>

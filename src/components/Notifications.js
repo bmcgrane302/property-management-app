@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NotificationItem from './NotificationItem';
+import RenewalItem from './RenewalItem';
+import RentStatus from './RentStatus';
 import { Col, Card, CardBody, CardSubtitle, Container } from 'reactstrap';
 
 
@@ -18,15 +20,38 @@ class Notifications extends Component {
       )
     })
 
+    let renewalItems = filterRenewalItems.map(renewal => {
+      return (
+        <Col key={renewal.id} md={12}>
+          <RenewalItem renewal={renewal} />
+        </Col>
+      )
+    })
 
     return (
       <Container>
+        <Card>
+          <CardBody>
+            <CardSubtitle>Rent status</CardSubtitle>
+          </CardBody>
+          <CardBody className="text-left">
+
+          </CardBody>
+        </Card>
        <Card>
          <CardBody>
            <CardSubtitle>Repairs</CardSubtitle>
          </CardBody>
          <CardBody className="text-left">
            {repairItems}
+         </CardBody>
+       </Card>
+       <Card>
+         <CardBody>
+           <CardSubtitle>Renewal Notices</CardSubtitle>
+         </CardBody>
+         <CardBody className="text-left">
+           {renewalItems}
          </CardBody>
        </Card>
      </Container>

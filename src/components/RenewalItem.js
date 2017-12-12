@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button, Card, CardBody, CardSubtitle, Row, Col, Container } from 'reactstrap';
-import { repairComplete } from '../actions/properties';
+import { renewalRemoved } from '../actions/properties';
 
 
-class NotificationItem extends Component {
+class RenewalItem extends Component {
 
   handleClick = (e) => {
     e.preventDefault()
-    this.props.repairComplete(this.props.repair.id)
+    this.props.renewalRemoved(this.props.renewal.id)
   }
 
   render () {
@@ -19,8 +19,7 @@ class NotificationItem extends Component {
       <Container>
           <Row>
              <Col sm="9">
-               <CardSubtitle >{this.props.repair.address}</CardSubtitle>
-               <CardSubtitle>{this.props.repair.repair_description}</CardSubtitle>
+               <CardSubtitle >{this.props.renewal.address}</CardSubtitle>
              </Col>
              <Col sm="3">
                <Button
@@ -37,15 +36,14 @@ class NotificationItem extends Component {
 }
 
 function mapStateToProps(store, thisComponentsProps){
-  console.log('comment props in notitem', store);
   return {properties: store.properties}
 }
 
 function mapDispatchToProps(dispatch){
    return{
-     repairComplete: bindActionCreators(repairComplete, dispatch),
+    renewalRemoved: bindActionCreators(renewalRemoved, dispatch),
 
    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (NotificationItem);
+export default connect(mapStateToProps, mapDispatchToProps) (RenewalItem);

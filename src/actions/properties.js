@@ -8,7 +8,10 @@ export const REMOVE_PROPERTY_PENDING = 'REMOVE_PROPERTY_PENDING'
 export const REMOVE_PROPERTY_SUCCESS = 'REMOVE_PROPERTY_SUCCESS'
 export const EDIT_PROPERTY_PENDING = 'EDIT_PROPERTY_PENDING'
 export const EDIT_PROPERTY_SUCCESS = 'EDIT_PROPERTY_SUCCESS'
-
+export const REPAIR_COMPLETE_PENDING = 'REPAIR_COMPLETE_PENDING'
+export const REPAIR_COMPLETE_SUCCESS = 'REPAIR_COMPLETE_SUCCESS'
+export const RENEWAL_REMOVED_PENDING = 'RENEWAL_REMOVED_PENDING'
+export const RENEWAL_REMOVED_SUCCESS = 'RENEWAL_REMOVED_SUCCESS'
 
 export const getProperties = () => {
   return async (dispatch) => {
@@ -49,6 +52,28 @@ export const editProperty = (id) => {
     let properties = await axios.patch(`http://localhost:8000/${id}/update`)
     dispatch({
       type: EDIT_PROPERTY_SUCCESS,
+      payload: properties
+    })
+  }
+}
+
+export const repairComplete = (id) => {
+  return async (dispatch) => {
+    dispatch({type: REPAIR_COMPLETE_PENDING})
+    let properties = await axios.patch(`http://localhost:8000/removerepair/${id}`)
+    dispatch({
+      type: REPAIR_COMPLETE_SUCCESS,
+      payload: properties
+    })
+  }
+}
+
+export const renewalRemoved = (id) => {
+  return async (dispatch) => {
+    dispatch({type: RENEWAL_REMOVED_PENDING})
+    let properties = await axios.patch(`http://localhost:8000/removerenewal/${id}`)
+    dispatch({
+      type: RENEWAL_REMOVED_SUCCESS,
       payload: properties
     })
   }
