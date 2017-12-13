@@ -13,8 +13,9 @@ class Property extends Component {
       <div>
         <Card>
         <CardBody className="text-left">
-          <CardTitle>{this.props.property.address}  {this.props.property.unit}</CardTitle>
+          <CardTitle>{this.props.property.address}  unit: {this.props.property.unit}</CardTitle>
           <CardSubtitle>{this.props.property.city} {this.props.property.state} {this.props.property.zipcode} </CardSubtitle>
+          <CardSubtitle>Tenant: {this.props.property.fname} {this.props.property.lname}</CardSubtitle>
           <CardSubtitle>Mortgage: ${this.props.property.mortgage}</CardSubtitle>
           <CardSubtitle>Property Tax: ${this.props.property.property_tax}</CardSubtitle>
           <CardSubtitle>Property Insurance: ${this.props.property.property_insurance}</CardSubtitle>
@@ -25,7 +26,7 @@ class Property extends Component {
           <CardSubtitle>Repairs: {this.props.property.repairs}</CardSubtitle>
           <CardSubtitle>Repair comments: {this.props.property.repair_description}</CardSubtitle>
 
-           
+
             <Button
               onClick={()=> this.props.removeProperty(this.props.property.id)}
             >remove

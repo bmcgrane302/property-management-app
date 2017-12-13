@@ -15,6 +15,8 @@ class AddPropForm extends Component {
          city: '',
          state: '',
          zipcode: '' ,
+         fname: '',
+         lname: '',
          mortgage: '',
          property_tax: '',
          property_insurance: '',
@@ -38,7 +40,7 @@ class AddPropForm extends Component {
 
     return (
 
-           
+
              <Container>
                <Form onSubmit={this.handleSubmit}>
                <Row>
@@ -100,6 +102,30 @@ class AddPropForm extends Component {
                     </FormGroup>
                   </Col>
                  </Row>
+                 <Row>
+                   <Col sm='10'>
+                     <FormGroup>
+                       <Input
+                         type="text"
+                         id="fname"
+                         onChange={(e)=> this.setState({fname: e.target.value})}
+                         value={this.state.fname}
+                         placeholder='first name'
+                          />
+                     </FormGroup>
+                   </Col>
+                   <Col sm='2'>
+                     <FormGroup>
+                       <Input
+                          type="text"
+                          id="lname"
+                          onChange={(e)=> this.setState({lname: e.target.value})}
+                          value={this.state.lname}
+                          placeholder='first name'
+                          />
+                     </FormGroup>
+                   </Col>
+                  </Row>
                  <Row>
                    <Col>
                      <FormGroup>
