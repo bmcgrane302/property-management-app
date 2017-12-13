@@ -28,7 +28,7 @@ class App extends Component {
           <Switch>
              <Route exact path="/" component={SplashPage} />
              <Route exact path="/dash" component={Dashboard} />
-             <Route exact path="/edit" component={EditProperty} />
+             <Route exact path="/edit/:id" component={EditProperty} />
              <Route exact path="/add" component={AddPropForm} />
 
           </Switch>

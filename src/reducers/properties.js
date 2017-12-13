@@ -3,7 +3,8 @@ import { GET_PROPERTIES_PENDING, GET_PROPERTIES_SUCCESS,
          REMOVE_PROPERTY_PENDING, REMOVE_PROPERTY_SUCCESS,
          REPAIR_COMPLETE_PENDING, REPAIR_COMPLETE_SUCCESS,
          RENEWAL_REMOVED_PENDING, RENEWAL_REMOVED_SUCCESS,
-         RENT_PAID_PENDING, RENT_PAID_SUCCESS
+         RENT_PAID_PENDING, RENT_PAID_SUCCESS,
+         EDIT_PROPERTY_PENDING, EDIT_PROPERTY_SUCCESS
        } from '../actions/properties'
 
 
@@ -32,7 +33,13 @@ export default(state=[], action) => {
     case RENT_PAID_PENDING:
      return state;
     case RENT_PAID_SUCCESS:
-     return [...action.payload.data]
+     return [...action.payload.data];
+    case EDIT_PROPERTY_PENDING:
+     return state;
+    case EDIT_PROPERTY_SUCCESS:
+    console.log('work motherfucker', action.payload.data[0].id);
+     console.log("action state", state);
+     return [...action.payload.data];
     default:
      return state;
   }

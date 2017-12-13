@@ -28,8 +28,11 @@ class Dashboard extends Component {
        return (
          <Col key={property.id} md={12}>
           <Property property={property}/>
-           
+          <Button
+            onClick={() => this.props.history.push('/edit/' + property.id)}
+            >EDIT</Button>
         </Col>
+
        )
      })
 

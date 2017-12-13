@@ -24,8 +24,8 @@ class Property extends Component {
           <CardSubtitle>Rent status: {this.props.property.rent_paid}</CardSubtitle>
           <CardSubtitle>Repairs: {this.props.property.repairs}</CardSubtitle>
           <CardSubtitle>Repair comments: {this.props.property.repair_description}</CardSubtitle>
-            <Button href="./edit"  >Edit
-          </Button>
+
+           
             <Button
               onClick={()=> this.props.removeProperty(this.props.property.id)}
             >remove

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { editProperty } from '../actions/properties';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
@@ -9,180 +10,55 @@ import 'react-day-picker/lib/style.css';
 
 
 class EditProperty extends Component {
-   state = {
-         address: '',
-         unit: '',
-         city: '',
-         state: '',
-         zipcode: '' ,
-         mortgage: '',
-         property_tax: '',
-         property_insurance: '',
-         rent_amount: '',
-         lease_start_date: '',
-         lease_end_date: '',
-         rent_paid: true,
-         renewal_notice: false,
-         repairs: false,
-         repair_description:'none',
-   }
 
-   handleSubmit = (e) => {
-     console.log('edit working', e);
-     e.preventDefault()
-     this.props.editProperty(this.state)
-   }
+   editProperty = (values) => {
+    console.log('form values', values)
+  }
+
 
 
   render () {
-
+    const { handleSubmit } = this.props
+    console.log('props in edit', this.props);
 
     return (
         <Card>
           <CardBody>
-             <Container>
-               <Form onSubmit={this.handleSubmit}>
-               <Row>
-                 <Col sm='10'>
-                   <FormGroup>
-                     <Input
-                       type="text"
-                       id="address"
-                       onChange={(e)=> this.setState({address: e.target.value})}
-                       value={this.state.address}
-                       placeholder=''
-                        />
-                   </FormGroup>
-                 </Col>
-                 <Col sm='2'>
-                   <FormGroup>
-                     <Input
-                        type="text"
-                        id="unit"
-                        onChange={(e)=> this.setState({unit: e.target.value})}
-                        value={this.state.unit}
-                        placeholder='unit'
-                        />
-                   </FormGroup>
-                 </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <FormGroup>
-                      <Input
-                        type="text"
-                        id="city"
-                        onChange={(e)=> this.setState({city: e.target.value})}
-                        value={this.state.city}
-                        placeholder='city'
-                         />
-                    </FormGroup>
-                  </Col>
-                  <Col>
-                    <FormGroup>
-                      <Input
-                         type="text"
-                         id="state"
-                         onChange={(e)=> this.setState({state: e.target.value})}
-                         value={this.state.state}
-                         placeholder='state'
-                         />
-                    </FormGroup>
-                  </Col>
-                  <Col>
-                    <FormGroup>
-                      <Input
-                         type="text"
-                         id="zipcode"
-                         onChange={(e)=> this.setState({zipcode: e.target.value})}
-                         value={this.state.zipcode}
-                         placeholder='zipcode'
-                         />
-                    </FormGroup>
-                  </Col>
-                 </Row>
-                 <Row>
-                   <Col>
-                     <FormGroup>
-                       <Input
-                         type="text"
-                         id="mortgage"
-                         onChange={(e)=> this.setState({mortgage: e.target.value})}
-                         value={this.state.mortgage}
-                         placeholder='mortgage'
-                          />
-                     </FormGroup>
-                   </Col>
-                   <Col>
-                     <FormGroup>
-                       <Input
-                          type="text"
-                          id="property_tax"
-                          onChange={(e)=> this.setState({property_tax: e.target.value})}
-                          value={this.state.property_tax}
-                          placeholder='property_tax'
-                          />
-                     </FormGroup>
-                   </Col>
-                   <Col>
-                     <FormGroup>
-                       <Input
-                          type="text"
-                          id="property_insurance"
-                          onChange={(e)=> this.setState({property_insurance: e.target.value})}
-                          value={this.state.property_insurance}
-                          placeholder='property_insurance'
-                          />
-                     </FormGroup>
-                   </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <FormGroup>
-                        <Input
-                          type="text"
-                          id="rent_amount"
-                          onChange={(e)=> this.setState({rent_amount: e.target.value})}
-                          value={this.state.rent_amount}
-                          placeholder='rent_amount'
-                           />
-                      </FormGroup>
-                    </Col>
-                    <Col>
-                      <FormGroup>
-                      <Input
-                         type="text"
-                         id="lease_start_date"
-                         onChange={(e)=> this.setState({lease_start_date: e.target.value})}
-                         value={this.state.lease_start_date}
-                         placeholder='lease start date'
-                         />
-                      </FormGroup>
-                    </Col>
-                    <Col>
-                      <FormGroup>
-                        <Input
-                           type="text"
-                           id="lease_end_date"
-                           onChange={(e)=> this.setState({lease_end_date: e.target.value})}
-                           value={this.state.lease_end_date}
-                           placeholder='lease end date'
-                           />
-                      </FormGroup>
-                    </Col>
-                   </Row>
-                   <Button type='submit'>Submit</Button>
-               </Form>
-             </Container>
+            <form onSubmit={ handleSubmit(this.editProperty) }>
+               <div>
+                 <label htmlFor="address">Address</label>
+                 <Field name="address" component="input" type="text" />
+               </div>
+               <div>
+                 <label htmlFor="unit">Unit</label>
+                 <Field name="unit" component="input" type="text" />
+               </div>
+               <div>
+                 <label htmlFor="city">City</label>
+                 <Field name="city" component="input" type="text" />
+               </div>
+               <div>
+                 <label htmlFor="state">State</label>
+                 <Field name="state" component="input" type="text" />
+               </div>
+               <button type="submit">Submit</button>
+             </form>
            </CardBody>
         </Card>
 
     )
   }
 }
-function mapStateToProps(state) {
+
+EditProperty = reduxForm({
+  // a unique name for the form
+  form: 'property_edit'
+})(EditProperty)
+
+function mapStateToProps(state, props) {
+  //console.log('statetetetetetetet', state.properties[0]);
    return {
-     properties: state.properties
+     initialValues: state.properties.filter(property => property.id == props.match.params.id)[0]
    }
 }
 

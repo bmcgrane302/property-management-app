@@ -13,6 +13,7 @@
     "react-scripts": "1.0.17",
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
+    "redux-form": "^7.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
