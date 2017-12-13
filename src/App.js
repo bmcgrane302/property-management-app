@@ -9,7 +9,8 @@ import AddPropForm from './components/AddPropForm';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Link
 } from 'react-router-dom';
 
 import './App.css';

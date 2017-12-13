@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { addProperty } from '../actions/properties';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
- 
+
 
 
 class AddPropForm extends Component {
@@ -30,6 +31,7 @@ class AddPropForm extends Component {
      console.log('button working');
      e.preventDefault()
      this.props.addProperty(this.state)
+     this.props.history.push('/dash');
    }
 
   render () {
@@ -148,7 +150,7 @@ class AddPropForm extends Component {
                     <Col>
                       <FormGroup>
                       <Input
-                         type="text"
+                         type="date"
                          id="lease_start_date"
                          onChange={(e)=> this.setState({lease_start_date: e.target.value})}
                          value={this.state.lease_start_date}
@@ -159,7 +161,7 @@ class AddPropForm extends Component {
                     <Col>
                       <FormGroup>
                         <Input
-                           type="text"
+                           type="date"
                            id="lease_end_date"
                            onChange={(e)=> this.setState({lease_end_date: e.target.value})}
                            value={this.state.lease_end_date}

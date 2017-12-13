@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { editProperty } from '../actions/properties';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
@@ -14,6 +15,7 @@ class EditProperty extends Component {
    editProperty = (values) => {
     console.log('form values', values)
     this.props.editProperty(values);
+    this.props.history.push('/dash');
   }
 
 
