@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NotificationItem from './NotificationItem';
 import RenewalItem from './RenewalItem';
 import RentStatus from './RentStatus';
-import { Col, Card, CardBody, CardSubtitle, Container, CardTitle }
+import { Col, Card, CardBody, CardSubtitle, Container, CardTitle, Row }
 from 'reactstrap';
 
 
@@ -11,7 +11,10 @@ class Notifications extends Component {
 
   render () {
     let filterRepairItems= this.props.properties.filter((item)=> item.repairs === true)
+
     let filterRenewalItems= this.props.properties.filter((item)=> item.renewal_notice === true)
+
+    let filterRentStatusItems= this.props.properties.filter((item)=> item.rent_paid === false)
 
     let repairItems = filterRepairItems.map(repair => {
       return (
@@ -41,8 +44,21 @@ class Notifications extends Component {
     return (
       <div>
         <Card>
-          <CardBody>
-            <CardTitle>Rent status</CardTitle>
+          <CardBody style= {{backgroundColor: '#3a3f44', color: 'white'}}>
+            <CardTitle >Rent Status</CardTitle>
+          </CardBody>
+          <CardBody className="text-left">
+            <Row >
+               <Col sm="6">
+                 <CardSubtitle >Address</CardSubtitle>
+               </Col>
+               <Col sm="3">
+                 <CardSubtitle >Unit</CardSubtitle>
+               </Col>
+               <Col sm='3'>
+                 <CardSubtitle>Status</CardSubtitle>
+               </Col>
+            </Row>
           </CardBody>
           <CardBody className="text-left">
             {propList}

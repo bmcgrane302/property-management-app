@@ -44,7 +44,7 @@ class Dashboard extends Component {
       <Container>
         <TopNav />
         <Row>
-          <Col sm='8'>
+          <Col sm='7'>
             <Container>
               <InputGroup>
                 <Input
@@ -54,7 +54,7 @@ class Dashboard extends Component {
             </Container>
              {propertyList}
           </Col>
-          <Col sm='4'>
+          <Col sm='5'>
             <Notifications />
           </Col>
         </Row>
