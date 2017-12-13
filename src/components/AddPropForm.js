@@ -37,8 +37,8 @@ class AddPropForm extends Component {
   render () {
 
     return (
-        <Card>
-          <CardBody>
+
+           
              <Container>
                <Form onSubmit={this.handleSubmit}>
                <Row>
@@ -174,8 +174,8 @@ class AddPropForm extends Component {
                    <Button  href='./dash'>Dashboard</Button>
                </Form>
              </Container>
-           </CardBody>
-        </Card>
+
+
 
     )
   }

@@ -5,7 +5,7 @@ import RentStatus from './RentStatus';
 import Notifications from './Notifications';
 import TopNav from './TopNav';
 import AddPropForm from './AddPropForm';
-import { Container, Row, Col, InputGroup, Input, Button } from 'reactstrap';
+import { Container, Row, Col, InputGroup, Input, Button, Card } from 'reactstrap';
 
 
 
@@ -26,18 +26,22 @@ class Dashboard extends Component {
 
      let propertyList = filterList.sort((a,b)=> a.id-b.id).map(property => {
        return (
-         <Col key={property.id} md={12}>
-          <Property property={property}/>
-          <Button
-            onClick={() => this.props.history.push('/update/' + property.id)}
-            >EDIT</Button>
-        </Col>
+
+           <Col key={property.id} md={12}>
+            <Property property={property}/>
+            <Button
+              size="sm" block
+              onClick={() => this.props.history.push('/update/' + property.id)}
+              >EDIT</Button>
+           </Col>
+
+
 
        )
      })
 
     return (
-      <div>
+      <Container>
         <TopNav />
         <Row>
           <Col sm='8'>
@@ -54,7 +58,7 @@ class Dashboard extends Component {
             <Notifications />
           </Col>
         </Row>
-      </div>
+      </Container>
     )
   }
 }

@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import NotificationItem from './NotificationItem';
 import RenewalItem from './RenewalItem';
 import RentStatus from './RentStatus';
-import { Col, Card, CardBody, CardSubtitle, Container } from 'reactstrap';
+import { Col, Card, CardBody, CardSubtitle, Container, CardTitle }
+from 'reactstrap';
 
 
 class Notifications extends Component {
@@ -38,10 +39,10 @@ class Notifications extends Component {
     console.log('prop list', propList);
 
     return (
-      <Container>
+      <div>
         <Card>
           <CardBody>
-            <CardSubtitle>Rent status</CardSubtitle>
+            <CardTitle>Rent status</CardTitle>
           </CardBody>
           <CardBody className="text-left">
             {propList}
@@ -49,7 +50,7 @@ class Notifications extends Component {
         </Card>
        <Card>
          <CardBody>
-           <CardSubtitle>Repairs</CardSubtitle>
+           <CardTitle>Repairs</CardTitle>
          </CardBody>
          <CardBody className="text-left">
            {repairItems}
@@ -57,13 +58,13 @@ class Notifications extends Component {
        </Card>
        <Card>
          <CardBody>
-           <CardSubtitle>Renewal Notices</CardSubtitle>
+           <CardTitle>Renewal Notices</CardTitle>
          </CardBody>
          <CardBody className="text-left">
            {renewalItems}
          </CardBody>
        </Card>
-     </Container>
+     </div>
     )
   }
 }
