@@ -5,14 +5,15 @@ import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
+
 
 
 class EditProperty extends Component {
 
+
    editProperty = (values) => {
     console.log('form values', values)
+    this.props.editProperty(values);
   }
 
 
@@ -24,7 +25,8 @@ class EditProperty extends Component {
     return (
         <Card>
           <CardBody>
-            <form onSubmit={ handleSubmit(this.editProperty) }>
+
+            <form onSubmit={handleSubmit(this.editProperty)}>
                <div>
                  <label htmlFor="address">Address</label>
                  <Field name="address" component="input" type="text" />

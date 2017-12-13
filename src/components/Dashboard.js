@@ -29,7 +29,7 @@ class Dashboard extends Component {
          <Col key={property.id} md={12}>
           <Property property={property}/>
           <Button
-            onClick={() => this.props.history.push('/edit/' + property.id)}
+            onClick={() => this.props.history.push('/update/' + property.id)}
             >EDIT</Button>
         </Col>
 

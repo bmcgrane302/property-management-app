@@ -37,8 +37,8 @@ export default(state=[], action) => {
     case EDIT_PROPERTY_PENDING:
      return state;
     case EDIT_PROPERTY_SUCCESS:
-    console.log('work motherfucker', action.payload.data[0].id);
-     console.log("action state", state);
+      console.log('work motherfucker', action.payload.data);
+      console.log("action state", state);
      return [...action.payload.data];
     default:
      return state;

@@ -50,11 +50,12 @@ export const removeProperty = (id) => {
 
 export const editProperty = (property) => {
   return async (dispatch) => {
+    console.log("EDITING PROPERTY...");
     dispatch({type: EDIT_PROPERTY_PENDING})
-    let properties = await axios.patch(`http://localhost:8000/update/${property.id}`,property)
+    let editProperties = await axios.patch(`http://localhost:8000/update/${property.id}`,property)
     dispatch({
       type: EDIT_PROPERTY_SUCCESS,
-      payload: properties
+      payload: editProperties
     })
   }
 }
