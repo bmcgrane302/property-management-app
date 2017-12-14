@@ -8,7 +8,6 @@ import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
-
 class EditProperty extends Component {
 
 
@@ -18,21 +17,12 @@ class EditProperty extends Component {
     this.props.history.push('/dash');
   }
 
-  handleClick = (e) => {
-    console.log('click is working for repair',this.props.blah.initial.id);
-    e.preventDefault()
-    this.props.repairNeeded(this.props.blah.initial.id)
-  }
-
-
-
   render () {
     const { handleSubmit } = this.props
     console.log('props in edit', );
 
     return (
     <Container  className="text-left" style={{marginTop: 60}}>
-
         <Form onSubmit={handleSubmit(this.editProperty)}>
             <h3>PROPERTY ADDRESS</h3>
                <Row style={{margin: 10}}>
@@ -130,20 +120,22 @@ class EditProperty extends Component {
            </Row>
            <h3>REPAIRS</h3>
              <Row style={{margin: 10}}>
-               <Col sm='1'>
-                 <label htmlFor="repair_amount">Cost</label>
+               <Col sm='2'>
+                 <label htmlFor="repairs">Repairs</label>
                </Col>
-               <Col sm='3'>
-                <Field name="repair_amount" component="input" type="text" />
-               </Col>
-               <Col sm='1'>
-                 <Button
-                   onClick={this.handleClick}
-                   outline color="success"
-                   size="sm"
-                   >add
-                 </Button>
-               </Col>
+                 <Col sm='1'>
+                  <Field name="repairs" component="select">
+                     <option></option>
+                     <option value="true">Yes</option>
+                     <option value="false">No</option>
+                   </Field>
+                 </Col>
+                 <Col sm='1'>
+                   <label htmlFor="repair_amount">Cost</label>
+                 </Col>
+                 <Col sm='3'>
+                  <Field name="repair_amount" component="input" type="text" />
+                 </Col>
              </Row>
               <Row style={{margin: 10}}>
                 <Col sm='1'>
@@ -153,10 +145,8 @@ class EditProperty extends Component {
                  <Field name="repair_description" component="textarea" type="text" />
                 </Col>
              </Row>
-
-        <button type="submit">Submit</button>
+         <button type="submit">Submit</button>
         </Form>
-
     </Container>
     )
   }
