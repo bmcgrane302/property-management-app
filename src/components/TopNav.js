@@ -9,7 +9,7 @@ class TopNav extends Component {
         <Navbar color="faded" light>
            <NavbarBrand href="/add" className="mr-auto">Create Property</NavbarBrand>
            <NavbarBrand href="/" className="mr-auto">Home</NavbarBrand>
-           <NavbarBrand   className="mr-auto">Date</NavbarBrand>
+           <NavbarBrand href="/pnl"  className="mr-auto">Profit Loss</NavbarBrand>
          </Navbar>
       </div>
     )

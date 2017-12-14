@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import SplashPage from './components/SplashPage';
 import EditProperty from './components/EditProperty';
 import AddPropForm from './components/AddPropForm';
+import ProfitLoss from './components/ProfitLoss';
 import {
   BrowserRouter as Router,
   Route,
@@ -19,7 +20,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getProperties()
-  
+
   }
 
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
              <Route exact path="/dash" component={Dashboard} />
              <Route exact path="/update/:id" component={EditProperty} />
              <Route exact path="/add" component={AddPropForm} />
+             <Route exact path="/pnl" component={ProfitLoss} />
 
           </Switch>
         </Router>
