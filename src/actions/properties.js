@@ -10,6 +10,8 @@ export const EDIT_PROPERTY_PENDING = 'EDIT_PROPERTY_PENDING'
 export const EDIT_PROPERTY_SUCCESS = 'EDIT_PROPERTY_SUCCESS'
 export const REPAIR_COMPLETE_PENDING = 'REPAIR_COMPLETE_PENDING'
 export const REPAIR_COMPLETE_SUCCESS = 'REPAIR_COMPLETE_SUCCESS'
+export const REPAIR_NEEDED_PENDING = 'REPAIR_NEEDED_PENDING'
+export const REPAIR_NEEDED_SUCCESS = 'REPAIR_NEEDED_SUCCESS'
 export const RENEWAL_REMOVED_PENDING = 'RENEWAL_REMOVED_PENDING'
 export const RENEWAL_REMOVED_SUCCESS = 'RENEWAL_REMOVED_SUCCESS'
 export const RENT_PAID_PENDING = 'RENT_PAID_PENDING'
@@ -66,6 +68,17 @@ export const repairComplete = (id) => {
     let properties = await axios.patch(`http://localhost:8000/removerepair/${id}`)
     dispatch({
       type: REPAIR_COMPLETE_SUCCESS,
+      payload: properties
+    })
+  }
+}
+
+export const repairNeeded = (id) => {
+  return async (dispatch) => {
+    dispatch({type: REPAIR_NEEDED_PENDING})
+    let properties = await axios.patch(`http://localhost:8000/addrepair/${id}`)
+    dispatch({
+      type: REPAIR_NEEDED_SUCCESS,
       payload: properties
     })
   }

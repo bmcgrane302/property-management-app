@@ -30,11 +30,11 @@ class Dashboard extends Component {
            <Col key={property.id} md={12}>
             <Property property={property}/>
             <Button
+              style= {{backgroundColor: '#515960', color: 'white'}}
               size="sm" block
               onClick={() => this.props.history.push('/update/' + property.id)}
               >EDIT</Button>
            </Col>
-
        )
      })
 

@@ -9,6 +9,9 @@ import { Card, CardImg, CardText, CardBody, Row, Col,
 class Property extends Component {
 
   render () {
+
+
+
     return (
       <div>
         <Card style={{marginTop: 25, marginBottom: 5}}>
@@ -101,8 +104,8 @@ class Property extends Component {
             <CardSubtitle>Repairs:</CardSubtitle>
             </Col>
             <Col sm='8'>
-              {this.props.property.repairs?<CardSubtitle >NONE</CardSubtitle> :
-              <CardSubtitle style={{color: 'red' }}>NEEDED</CardSubtitle>}
+              {this.props.property.repairs?<CardSubtitle style={{color: 'red' }} >NEEDED</CardSubtitle> :
+              <CardSubtitle >NONE</CardSubtitle>}
             </Col>
           </Row>
           <Row style={{paddingBottom: 10}}>

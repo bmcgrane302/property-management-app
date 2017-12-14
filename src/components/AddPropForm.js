@@ -40,6 +40,7 @@ class AddPropForm extends Component {
 
     return (
 
+
   <Container >
     <Card style={{marginTop: 100, padding: 20, borderColor: '#515960', backgroundColor: '#515960' }}>
       <CardBody>
@@ -109,7 +110,7 @@ class AddPropForm extends Component {
             </Col>
            </Row>
            <Row>
-             <Col sm='10'>
+             <Col sm='6'>
                <FormGroup>
                  <Input
                    style={{borderColor: '#515960'}}
@@ -121,7 +122,7 @@ class AddPropForm extends Component {
                     />
                </FormGroup>
              </Col>
-             <Col sm='2'>
+             <Col sm='6'>
                <FormGroup>
                  <Input
                     style={{borderColor: '#515960'}}
@@ -129,7 +130,7 @@ class AddPropForm extends Component {
                     id="lname"
                     onChange={(e)=> this.setState({lname: e.target.value})}
                     value={this.state.lname}
-                    placeholder='first name'
+                    placeholder='last name'
                     />
                </FormGroup>
              </Col>

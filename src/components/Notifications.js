@@ -12,7 +12,11 @@ class Notifications extends Component {
   render () {
     let filterRepairItems= this.props.properties.filter((item)=> item.repairs === true)
 
+    let listRepairItems= this.props.properties.filter((item)=> item.repairs === true).length
+
     let filterRenewalItems= this.props.properties.filter((item)=> item.renewal_notice === true)
+
+    let listRenewalItems= this.props.properties.filter((item)=> item.renewal_notice === true).length
 
     let filterRentStatusFalse= this.props.properties.filter((item)=> item.rent_paid === false).length
 
@@ -77,7 +81,7 @@ class Notifications extends Component {
 
         <Card style={{marginBottom: 30}}>
            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
-             <CardTitle>Repairs</CardTitle>
+             <CardTitle>Repairs: {listRepairItems}</CardTitle>
            </CardBody>
            <CardBody className="text-left">
              <Row >
@@ -93,7 +97,7 @@ class Notifications extends Component {
 
         <Card style={{marginBottom: 30}}>
            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
-             <CardTitle>Renewal Notices</CardTitle>
+             <CardTitle>Renewal Notices: {listRenewalItems}</CardTitle>
            </CardBody>
            <CardBody className="text-left">
              <Row >

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { editProperty } from '../actions/properties';
+import { editProperty, repairNeeded } from '../actions/properties';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,12 @@ class EditProperty extends Component {
     console.log('form values', values)
     this.props.editProperty(values);
     this.props.history.push('/dash');
+  }
+
+  handleClick = (e) => {
+    console.log('click is working for repair');
+    e.preventDefault()
+    this.props.repairNeeded()
   }
 
 
@@ -123,17 +129,34 @@ class EditProperty extends Component {
               </Col>
            </Row>
            <h3>REPAIRS</h3>
+             <Row style={{margin: 10}}>
+               <Col sm='1'>
+                 <label htmlFor="repair_amount">Cost</label>
+               </Col>
+               <Col sm='3'>
+                <Field name="repair_amount" component="input" type="text" />
+               </Col>
+               <Col sm='1'>
+                 <Button
+                   onClick={this.handleClick}
+                   outline color="success"
+                   size="sm"
+                   >add
+                 </Button>
+               </Col>
+             </Row>
               <Row style={{margin: 10}}>
                 <Col sm='1'>
-                  <label htmlFor="repair_description">Repairs</label>
+                  <label htmlFor="repair_description">Description</label>
                 </Col>
-                <Col sm='11'>
+                <Col sm='10'>
                  <Field name="repair_description" component="textarea" type="text" />
                 </Col>
              </Row>
+
         <button type="submit">Submit</button>
         </Form>
-       
+
     </Container>
     )
   }
@@ -154,7 +177,8 @@ function mapStateToProps(state, props) {
 function mapDispatchToProps(dispatch) {
     return {
 
-       editProperty: bindActionCreators(editProperty, dispatch)
+       editProperty: bindActionCreators(editProperty, dispatch),
+       repairNeeded: bindActionCreators(repairNeeded, dispatch)
     }
   }
 

@@ -19,12 +19,12 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getProperties()
-    console.log('testing');
+  
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         <Router>
           <Switch>
              <Route exact path="/" component={SplashPage} />
