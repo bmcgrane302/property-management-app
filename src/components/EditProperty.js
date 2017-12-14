@@ -19,16 +19,16 @@ class EditProperty extends Component {
   }
 
   handleClick = (e) => {
-    console.log('click is working for repair');
+    console.log('click is working for repair',this.props.blah.initial.id);
     e.preventDefault()
-    this.props.repairNeeded()
+    this.props.repairNeeded(this.props.blah.initial.id)
   }
 
 
 
   render () {
     const { handleSubmit } = this.props
-    console.log('props in edit', this.props);
+    console.log('props in edit', );
 
     return (
     <Container  className="text-left" style={{marginTop: 60}}>
@@ -170,7 +170,9 @@ EditProperty = reduxForm({
 function mapStateToProps(state, props) {
   //console.log('statetetetetetetet', state.properties[0]);
    return {
-     initialValues: state.properties.filter(property => property.id == props.match.params.id)[0]
+     initialValues: state.properties.filter(property => property.id == props.match.params.id)[0],
+
+     blah: state.form.property_edit
    }
 }
 

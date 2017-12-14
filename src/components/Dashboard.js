@@ -35,6 +35,7 @@ class Dashboard extends Component {
               onClick={() => this.props.history.push('/update/' + property.id)}
               >EDIT</Button>
            </Col>
+
        )
      })
 
@@ -46,6 +47,7 @@ class Dashboard extends Component {
             <Container>
               <InputGroup >
                 <Input
+                  style={{borderColor: '#515960'}}
                   onChange={this.handleChange} type="search"
                   placeholder="search for property" />
               </InputGroup>
