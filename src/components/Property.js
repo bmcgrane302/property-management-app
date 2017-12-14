@@ -11,19 +11,18 @@ class Property extends Component {
   render () {
     return (
       <div>
-        <Card style={{marginTop: 25}}>
-        <CardBody className="text-left">
-          <Row  >
-            <Col sm='5'>
-              <CardTitle>{this.props.property.address} </CardTitle>
+        <Card style={{marginTop: 25, marginBottom: 5}}>
+        <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
+          <Row >
+            <Col sm='6'>
+              <CardTitle>{this.props.property.address}  {this.props.property.unit} </CardTitle>
             </Col>
-            <Col sm='2'>
-              <CardTitle>{this.props.property.unit}</CardTitle>
-            </Col >
-            <Col sm='5'>
+            <Col sm='6'>
               <CardTitle>{this.props.property.city} {this.props.property.state} {this.props.property.zipcode} </CardTitle>
             </Col>
           </Row>
+        </CardBody>
+        <CardBody className='text-left'>
           <Row style={{paddingBottom: 10}}>
             <Col sm='4'>
               <CardSubtitle>Tenant</CardSubtitle>

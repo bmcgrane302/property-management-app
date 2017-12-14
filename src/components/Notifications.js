@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NotificationItem from './NotificationItem';
 import RenewalItem from './RenewalItem';
 import RentStatus from './RentStatus';
-import { Col, Card, CardBody, CardSubtitle, Container, CardTitle, Row }
+import { Col, Card, CardBody, CardSubtitle, Container, CardTitle, Row, CardText }
 from 'reactstrap';
 
 
@@ -14,7 +14,9 @@ class Notifications extends Component {
 
     let filterRenewalItems= this.props.properties.filter((item)=> item.renewal_notice === true)
 
-    let filterRentStatusItems= this.props.properties.filter((item)=> item.rent_paid === false)
+    let filterRentStatusFalse= this.props.properties.filter((item)=> item.rent_paid === false).length
+
+    let filterRentStatusTrue= this.props.properties.filter((item)=> item.rent_paid === true).length
 
     let repairItems = filterRepairItems.map(repair => {
       return (
@@ -44,10 +46,18 @@ class Notifications extends Component {
     return (
       <div>
         <Card style={{marginBottom: 30}}>
-          <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+          <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
             <CardTitle >Rent Status</CardTitle>
+            <Row>
+              <Col>
+                PAID: {filterRentStatusTrue}
+              </Col>
+              <Col>
+                UNPAID: {filterRentStatusFalse}
+              </Col>
+            </Row>
           </CardBody>
-          <CardBody className="text-left">
+          <CardBody className="text-left ">
             <Row >
                <Col sm="6">
                  <CardSubtitle >Address</CardSubtitle>
@@ -70,6 +80,13 @@ class Notifications extends Component {
              <CardTitle>Repairs</CardTitle>
            </CardBody>
            <CardBody className="text-left">
+             <Row >
+                <Col sm="6">
+                  <CardSubtitle >Address</CardSubtitle>
+                </Col>
+             </Row>
+           </CardBody>
+           <CardBody className="text-left">
              {repairItems}
            </CardBody>
         </Card>
@@ -77,6 +94,13 @@ class Notifications extends Component {
         <Card style={{marginBottom: 30}}>
            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
              <CardTitle>Renewal Notices</CardTitle>
+           </CardBody>
+           <CardBody className="text-left">
+             <Row >
+                <Col sm="6">
+                  <CardSubtitle >Address</CardSubtitle>
+                </Col>
+             </Row>
            </CardBody>
            <CardBody className="text-left">
              {renewalItems}

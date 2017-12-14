@@ -16,8 +16,7 @@ class RenewalItem extends Component {
 
     return (
 
-
-          <Row>
+          <Row style={{marginBottom: 10}}>
              <Col sm="9">
                <CardSubtitle >{this.props.renewal.address}</CardSubtitle>
              </Col>
@@ -27,10 +26,10 @@ class RenewalItem extends Component {
                  size="sm"
                  outline
                  color="success">
-                 complete</Button>
+                 sent</Button>
              </Col>
           </Row>
-       
+
     )
   }
 }

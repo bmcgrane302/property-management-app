@@ -46,7 +46,7 @@ class Dashboard extends Component {
         <Row>
           <Col sm='7'>
             <Container>
-              <InputGroup>
+              <InputGroup >
                 <Input
                   onChange={this.handleChange} type="search"
                   placeholder="search for property" />

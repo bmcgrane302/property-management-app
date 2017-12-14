@@ -31,8 +31,8 @@ class RentStatus extends Component {
              </CardSubtitle>
            </Col>
            <Col sm='3'>
-             {this.props.property.rent_paid?<Button size="sm" outline color="success">PAID</Button> :
-             <Button onClick={this.handleClick} size="sm" outline color="danger">UNPAID</Button>}
+             {this.props.property.rent_paid?<Button size="sm" outline color="success">paid</Button> :
+             <Button onClick={this.handleClick} size="sm" outline color="danger">unpaid</Button>}
            </Col>
         </Row>
 
