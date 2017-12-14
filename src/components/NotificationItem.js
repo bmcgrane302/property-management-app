@@ -16,24 +16,28 @@ class NotificationItem extends Component {
 
     return (
 
-      <Container>
+     <div style={{marginBottom: 10}}>
+       <Row >
+          <Col sm="8">
+            <CardSubtitle >{this.props.repair.address}</CardSubtitle>
+          </Col>
+          <Col sm="4">
+            <Button
+              onClick={this.handleClick}
+              size="sm"
+              outline
+              color="success">
+              completed</Button>
+          </Col>
+       </Row>
+       <Row >
+          <Col>
+           <CardSubtitle>{this.props.repair.repair_description}</CardSubtitle>
+          </Col>
+       </Row>
+     </div>
 
-          <Row>
-             <Col sm="9">
-               <CardSubtitle >{this.props.repair.address}</CardSubtitle>
-                <CardText>{this.props.repair.repair_description}</CardText>
-             </Col>
-             <Col sm="3">
-               <Button
-                 onClick={this.handleClick}
-                 size="sm"
-                 outline
-                 color="success">
-                 complete</Button>
-             </Col>
-          </Row>
-           
-      </Container>
+
     )
   }
 }

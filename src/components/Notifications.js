@@ -32,7 +32,7 @@ class Notifications extends Component {
       )
     })
 
-    let propList = this.props.properties.sort((a,b)=> a.paid-b.paid).map(property => {
+    let propList = this.props.properties.sort((a,b)=> a.rent_paid-b.rent_paid).map(property => {
       return (
         <Col key={property.id} md={12}>
          <RentStatus property={property} />
@@ -43,8 +43,8 @@ class Notifications extends Component {
 
     return (
       <div>
-        <Card>
-          <CardBody style= {{backgroundColor: '#3a3f44', color: 'white'}}>
+        <Card style={{marginBottom: 30}}>
+          <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
             <CardTitle >Rent Status</CardTitle>
           </CardBody>
           <CardBody className="text-left">
@@ -64,22 +64,24 @@ class Notifications extends Component {
             {propList}
           </CardBody>
         </Card>
-       <Card>
-         <CardBody>
-           <CardTitle>Repairs</CardTitle>
-         </CardBody>
-         <CardBody className="text-left">
-           {repairItems}
-         </CardBody>
-       </Card>
-       <Card>
-         <CardBody>
-           <CardTitle>Renewal Notices</CardTitle>
-         </CardBody>
-         <CardBody className="text-left">
-           {renewalItems}
-         </CardBody>
-       </Card>
+
+        <Card style={{marginBottom: 30}}>
+           <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+             <CardTitle>Repairs</CardTitle>
+           </CardBody>
+           <CardBody className="text-left">
+             {repairItems}
+           </CardBody>
+        </Card>
+
+        <Card style={{marginBottom: 30}}>
+           <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+             <CardTitle>Renewal Notices</CardTitle>
+           </CardBody>
+           <CardBody className="text-left">
+             {renewalItems}
+           </CardBody>
+        </Card>
      </div>
     )
   }

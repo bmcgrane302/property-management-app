@@ -18,23 +18,24 @@ class RentStatus extends Component {
 
     return (
 
-          <Row style={{paddingBottom: 10}}>
-             <Col sm="6">
-               <CardSubtitle >
-                 {this.props.property.address}
-               </CardSubtitle>
-             </Col>
-             <Col sm="3">
-               <CardSubtitle >
-                 {this.props.property.unit}
-               </CardSubtitle>
-             </Col>
-             <Col sm='3'>
-               <a onClick={this.handleClick}>{this.props.property.rent_paid?<CardSubtitle style={{color: 'green' }}>PAID</CardSubtitle> :
-               <CardSubtitle style={{color: 'red' }}>UNPAID</CardSubtitle>}</a>
-             </Col>
-          </Row>
-       
+        <Row style={{marginBottom: 10}}>
+           <Col sm="6">
+             <CardSubtitle >
+               {this.props.property.address}
+             </CardSubtitle>
+
+           </Col>
+           <Col sm="3">
+             <CardSubtitle >
+               {this.props.property.unit}
+             </CardSubtitle>
+           </Col>
+           <Col sm='3'>
+             {this.props.property.rent_paid?<Button size="sm" outline color="success">PAID</Button> :
+             <Button onClick={this.handleClick} size="sm" outline color="danger">UNPAID</Button>}
+           </Col>
+        </Row>
+
     )
   }
 }

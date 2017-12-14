@@ -14,13 +14,13 @@ class Property extends Component {
         <Card style={{marginTop: 25}}>
         <CardBody className="text-left">
           <Row  >
-            <Col>
+            <Col sm='5'>
               <CardTitle>{this.props.property.address} </CardTitle>
             </Col>
-            <Col>
-              <CardTitle>Unit: {this.props.property.unit}</CardTitle>
-            </Col>
-            <Col>
+            <Col sm='2'>
+              <CardTitle>{this.props.property.unit}</CardTitle>
+            </Col >
+            <Col sm='5'>
               <CardTitle>{this.props.property.city} {this.props.property.state} {this.props.property.zipcode} </CardTitle>
             </Col>
           </Row>
