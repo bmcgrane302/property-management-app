@@ -31,8 +31,13 @@ class NotificationItem extends Component {
           </Col>
        </Row>
        <Row >
+          <Col >
+           <CardSubtitle>Description: </CardSubtitle>
+          </Col>
+       </Row>
+       <Row >
           <Col>
-           <CardSubtitle>{this.props.repair.repair_description}</CardSubtitle>
+           <CardText>{this.props.repair.repair_description}</CardText>
           </Col>
        </Row>
      </div>

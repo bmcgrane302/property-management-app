@@ -16,7 +16,7 @@ class RenewalItem extends Component {
 
     return (
 
-      <Container>
+
           <Row>
              <Col sm="9">
                <CardSubtitle >{this.props.renewal.address}</CardSubtitle>
@@ -30,7 +30,7 @@ class RenewalItem extends Component {
                  complete</Button>
              </Col>
           </Row>
-      </Container>
+       
     )
   }
 }
