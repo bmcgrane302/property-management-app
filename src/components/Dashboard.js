@@ -35,8 +35,6 @@ class Dashboard extends Component {
               >EDIT</Button>
            </Col>
 
-
-
        )
      })
 

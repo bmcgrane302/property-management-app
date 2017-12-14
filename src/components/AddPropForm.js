@@ -40,13 +40,15 @@ class AddPropForm extends Component {
 
     return (
 
-
-       <Container>
+  <Container >
+    <Card style={{marginTop: 100, padding: 20, borderColor: '#515960', backgroundColor: '#515960' }}>
+      <CardBody>
          <Form onSubmit={this.handleSubmit}>
          <Row>
            <Col sm='10'>
              <FormGroup>
                <Input
+                 style={{borderColor: '#515960'}}
                  type="text"
                  id="address"
                  onChange={(e)=> this.setState({address: e.target.value})}
@@ -58,6 +60,7 @@ class AddPropForm extends Component {
            <Col sm='2'>
              <FormGroup>
                <Input
+                  style={{borderColor: '#515960'}}
                   type="text"
                   id="unit"
                   onChange={(e)=> this.setState({unit: e.target.value})}
@@ -71,6 +74,7 @@ class AddPropForm extends Component {
             <Col>
               <FormGroup>
                 <Input
+                  style={{borderColor: '#515960'}}
                   type="text"
                   id="city"
                   onChange={(e)=> this.setState({city: e.target.value})}
@@ -82,6 +86,7 @@ class AddPropForm extends Component {
             <Col>
               <FormGroup>
                 <Input
+                   style={{borderColor: '#515960'}}
                    type="text"
                    id="state"
                    onChange={(e)=> this.setState({state: e.target.value})}
@@ -93,6 +98,7 @@ class AddPropForm extends Component {
             <Col>
               <FormGroup>
                 <Input
+                   style={{borderColor: '#515960'}}
                    type="text"
                    id="zipcode"
                    onChange={(e)=> this.setState({zipcode: e.target.value})}
@@ -106,6 +112,7 @@ class AddPropForm extends Component {
              <Col sm='10'>
                <FormGroup>
                  <Input
+                   style={{borderColor: '#515960'}}
                    type="text"
                    id="fname"
                    onChange={(e)=> this.setState({fname: e.target.value})}
@@ -117,6 +124,7 @@ class AddPropForm extends Component {
              <Col sm='2'>
                <FormGroup>
                  <Input
+                    style={{borderColor: '#515960'}}
                     type="text"
                     id="lname"
                     onChange={(e)=> this.setState({lname: e.target.value})}
@@ -130,6 +138,7 @@ class AddPropForm extends Component {
              <Col>
                <FormGroup>
                  <Input
+                   style={{borderColor: '#515960'}}
                    type="text"
                    id="mortgage"
                    onChange={(e)=> this.setState({mortgage: e.target.value})}
@@ -141,22 +150,24 @@ class AddPropForm extends Component {
              <Col>
                <FormGroup>
                  <Input
+                    style={{borderColor: '#515960'}}
                     type="text"
                     id="property_tax"
                     onChange={(e)=> this.setState({property_tax: e.target.value})}
                     value={this.state.property_tax}
-                    placeholder='property_tax'
+                    placeholder='property tax'
                     />
                </FormGroup>
              </Col>
              <Col>
                <FormGroup>
                  <Input
+                    style={{borderColor: '#515960'}}
                     type="text"
                     id="property_insurance"
                     onChange={(e)=> this.setState({property_insurance: e.target.value})}
                     value={this.state.property_insurance}
-                    placeholder='property_insurance'
+                    placeholder='property insurance'
                     />
                </FormGroup>
              </Col>
@@ -165,17 +176,19 @@ class AddPropForm extends Component {
               <Col>
                 <FormGroup>
                   <Input
+                    style={{borderColor: '#515960'}}
                     type="text"
                     id="rent_amount"
                     onChange={(e)=> this.setState({rent_amount: e.target.value})}
                     value={this.state.rent_amount}
-                    placeholder='rent_amount'
+                    placeholder='rent amount'
                      />
                 </FormGroup>
               </Col>
               <Col>
                 <FormGroup>
                 <Input
+                   style={{borderColor: '#515960'}}
                    type="date"
                    id="lease_start_date"
                    onChange={(e)=> this.setState({lease_start_date: e.target.value})}
@@ -187,6 +200,7 @@ class AddPropForm extends Component {
               <Col>
                 <FormGroup>
                   <Input
+                     style={{borderColor: '#515960'}}
                      type="date"
                      id="lease_end_date"
                      onChange={(e)=> this.setState({lease_end_date: e.target.value})}
@@ -196,12 +210,22 @@ class AddPropForm extends Component {
                 </FormGroup>
               </Col>
              </Row>
-             <Button  type='submit'>Submit</Button>
-             <Button  href='./dash'>Dashboard</Button>
+             <Row>
+              <Col>
+               <Button
+                style={{backgroundColor: 'white'}}
+                outline color="success" type='submit'>Submit</Button>
+              </Col>
+              <Col>
+                <Button
+                  style={{backgroundColor: 'white'}}
+                  outline color="primary" href='./dash'>Dashboard</Button>
+              </Col>
+             </Row>
          </Form>
-       </Container>
-
-
+      </CardBody>
+     </Card>
+   </Container>
 
     )
   }

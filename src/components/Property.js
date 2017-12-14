@@ -114,8 +114,9 @@ class Property extends Component {
             </Col>
           </Row>
             <Button
+              size="sm" outline color="danger"
               onClick={()=> this.props.removeProperty(this.props.property.id)}
-            >remove
+            >delete
           </Button>
         </CardBody>
       </Card>

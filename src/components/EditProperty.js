@@ -25,7 +25,8 @@ class EditProperty extends Component {
     console.log('props in edit', this.props);
 
     return (
-      <Container  className="text-left" style={{marginTop: 60}}>
+    <Container  className="text-left" style={{marginTop: 60}}>
+
         <Form onSubmit={handleSubmit(this.editProperty)}>
             <h3>PROPERTY ADDRESS</h3>
                <Row style={{margin: 10}}>
@@ -130,19 +131,10 @@ class EditProperty extends Component {
                  <Field name="repair_description" component="textarea" type="text" />
                 </Col>
              </Row>
-
-
-
-
-
-
-
-
-
-
         <button type="submit">Submit</button>
         </Form>
-      </Container>
+       
+    </Container>
     )
   }
 }
