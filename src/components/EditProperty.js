@@ -22,107 +22,122 @@ class EditProperty extends Component {
     console.log('props in edit', );
 
     return (
-     <div className='editProp'>
-        <Form onSubmit={handleSubmit(this.editProperty)} style={{margin: 20}}>
-          <div>
-            <h3>PROPERTY ADDRESS</h3>
+     <div >
+      <Container>
+       <Card className="shadow"  >
+       <CardBody >
+        <Form onSubmit={handleSubmit(this.editProperty)} >
+          <div className='editProp'>
+            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+              <h3>PROPERTY ADDRESS</h3>
+            </CardBody>
               <Row >
-                <Col sm='4'>
+                <Col sm='6'>
                   <label htmlFor="address">Address</label>
                 </Col>
-                <Col sm='4'>
+                <Col sm='6'>
                   <label htmlFor="unit">Unit</label>
-                </Col>
-                <Col sm='4'>
-                  <label htmlFor="city">City</label>
                 </Col>
               </Row>
               <Row >
-                 <Col sm='4'>
+                 <Col sm='6'>
                   <Field name="address" component="input" type="text" />
                  </Col>
-                 <Col sm='4'>
+                 <Col sm='6'>
                   <Field name="unit" component="input" type="text" />
-                 </Col>
-                 <Col sm='4'>
-                  <Field name="city" component="input" type="text" />
                  </Col>
               </Row>
               <Row>
-                <Col sm='4'>
-                  <label htmlFor="state">State</label>
+                <Col sm='6'>
+                  <label htmlFor="city">City</label>
                 </Col>
-                <Col sm='4'>
-                  <label htmlFor="zipcode">Zipcode</label>
+                <Col sm='6'>
+                  <label htmlFor="state">State</label>
                 </Col>
              </Row>
              <Row >
-               <Col sm='4'>
+               <Col sm='6'>
+                <Field name="city" component="input" type="text" />
+               </Col>
+               <Col sm='6'>
                 <Field name="state" component="input" type="text" />
                </Col>
-               <Col sm='4'>
-                <Field name="zipcode" component="input" type="text" />
-               </Col>
+            </Row>
+            <Row>
+              <Col sm='6'>
+                <label htmlFor="zipcode">Zipcode</label>
+              </Col>
            </Row>
+           <Row >
+             <Col sm='6'>
+              <Field name="zipcode" component="input" type="text" />
+             </Col>
+          </Row>
           </div>
-          <div>
-            <h3>TENANT NAME</h3>
+          <div className='editProp'>
+        <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+          <h3>TENANT NAME</h3>
+        </CardBody>
                <Row>
-                 <Col sm='4'>
+                 <Col sm='6'>
                    <label htmlFor="fname">First</label>
                  </Col>
-                 <Col sm='4'>
+                 <Col sm='6'>
                    <label htmlFor="lname">Last</label>
                  </Col>
                 </Row>
                 <Row>
-                <Col sm='4'>
+                <Col sm='6'>
                  <Field name="fname" component="input" type="text" />
                 </Col>
-                <Col sm='4'>
+                <Col sm='6'>
                  <Field name="lname" component="input" type="text" />
                 </Col>
               </Row>
           </div>
-          <div>
+          <div className='editProp'>
+        <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
           <h3>MONTHLY FINACIALS</h3>
+        </CardBody>
              <Row >
-               <Col sm='4'>
+               <Col sm='6'>
                  <label htmlFor="mortgage">Mortgage</label>
                </Col>
-               <Col sm='4'>
+               <Col sm='6'>
                  <label htmlFor="property_tax">Tax</label>
-               </Col>
-               <Col sm='4'>
-                 <label htmlFor="property_insurance">Insurance</label>
                </Col>
             </Row>
             <Row>
-              <Col sm='4'>
+              <Col sm='6'>
                <Field name="mortgage" component="input" type="text" />
               </Col>
-              <Col sm='4'>
+              <Col sm='6'>
                <Field name="property_tax" component="input" type="text" />
-              </Col>
-              <Col sm='4'>
-               <Field name="property_insurance" component="input" type="text" />
               </Col>
             </Row>
             <Row >
-              <Col sm='1'>
+              <Col sm='6'>
+                <label htmlFor="property_insurance">Insurance</label>
+              </Col>
+              <Col sm='6'>
                 <label htmlFor="rent_amount">Rent</label>
               </Col>
            </Row>
            <Row  >
-             <Col sm='2'>
+             <Col sm='6'>
+              <Field name="property_insurance" component="input" type="text" />
+             </Col>
+             <Col sm='6'>
               <Field name="rent_amount" component="input" type="text" />
              </Col>
             </Row>
           </div>
-          <div>
-          <h3>LEASE</h3>
+          <div className='editProp'>
+        <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+        <h3>LEASE</h3>
+        </CardBody>
              <Row >
-               <Col sm='4'>
+               <Col sm='6'>
                  <label htmlFor="lease_start_date">Start</label>
                </Col>
                <Col sm='4'>
@@ -130,16 +145,18 @@ class EditProperty extends Component {
                </Col>
               </Row>
               <Row >
-                <Col sm='4'>
+                <Col sm='6'>
                  <Field name="lease_start_date" component="input" type="date" />
                 </Col>
-                <Col sm='4'>
+                <Col sm='6'>
                  <Field name="lease_end_date" component="input" type="date" />
                 </Col>
               </Row>
           </div>
-          <div>
-          <h3>REPAIRS</h3>
+         <div className='editProp'>
+        <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
+         <h3>REPAIRS</h3>
+        </CardBody>
             <Row >
               <Col sm='1'>
                   <label><Field name="repairs" component="input" type="radio" value="true"/> Yes</label>
@@ -149,15 +166,15 @@ class EditProperty extends Component {
               </Col>
             </Row>
             <Row >
-               <Col sm='4'>
+               <Col sm='6'>
                  <label htmlFor="repair_amount">Cost</label>
                </Col>
-                 <Col sm='4'>
+                 <Col sm='6'>
                  <label htmlFor="repair_description">Description</label>
                </Col>
             </Row>
             <Row>
-                <Col sm='4'>
+                <Col sm='6'>
                  <Field name="repair_amount" component="input" type="text" />
                 </Col>
                 <Col sm='6'>
@@ -165,7 +182,7 @@ class EditProperty extends Component {
                 </Col>
             </Row>
           </div>
-          <div>
+          <div className='editProp'>
           <Row>
            <Col sm='6'>
              <Button
@@ -177,8 +194,11 @@ class EditProperty extends Component {
              </Button>
            </Col>
           </Row>
-          </div>     
+          </div>
         </Form>
+         </CardBody>
+        </Card>
+        </Container>
       </div>
     )
   }

@@ -13,7 +13,7 @@ class Property extends Component {
 
 
     return (
-      <div>
+      <div >
         <Card className='shadow' style={{marginTop: 25, marginBottom: 5, borderColor: '#515960'}}>
         <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
           <Row >
@@ -42,7 +42,7 @@ class Property extends Component {
               <CardSubtitle>${this.props.property.mortgage}</CardSubtitle>
             </Col>
           </Row>
-          
+
           <Row style={{paddingBottom: 10}}>
             <Col sm='4'>
               <CardSubtitle>Property Tax: </CardSubtitle>
