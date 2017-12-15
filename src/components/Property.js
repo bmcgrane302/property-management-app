@@ -42,14 +42,7 @@ class Property extends Component {
               <CardSubtitle>${this.props.property.mortgage}</CardSubtitle>
             </Col>
           </Row>
-          <Row style={{paddingBottom: 10}}>
-            <Col sm='4'>
-              <CardSubtitle>Property Tax: </CardSubtitle>
-            </Col>
-            <Col sm='8'>
-              <CardSubtitle>${this.props.property.property_tax}</CardSubtitle>
-            </Col>
-          </Row>
+          
           <Row style={{paddingBottom: 10}}>
             <Col sm='4'>
               <CardSubtitle>Property Tax: </CardSubtitle>
@@ -116,7 +109,7 @@ class Property extends Component {
               <CardSubtitle>{this.props.property.repair_description}</CardSubtitle>
             </Col>
           </Row>
-            <Button 
+            <Button
               size="sm" outline color="danger"
               onClick={()=> this.props.removeProperty(this.props.property.id)}
             >delete

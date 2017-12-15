@@ -22,146 +22,164 @@ class EditProperty extends Component {
     console.log('props in edit', );
 
     return (
-    <Container  className="text-left" style={{marginTop: 60}}>
-        <Form onSubmit={handleSubmit(this.editProperty)}>
+     <div className='editProp'>
+        <Form onSubmit={handleSubmit(this.editProperty)} style={{margin: 20}}>
+          <div>
             <h3>PROPERTY ADDRESS</h3>
-               <Row style={{margin: 10}}>
-                 <Col sm='1'>
-                   <label htmlFor="address">Address</label>
-                 </Col>
-                 <Col sm='2'>
+              <Row >
+                <Col sm='4'>
+                  <label htmlFor="address">Address</label>
+                </Col>
+                <Col sm='4'>
+                  <label htmlFor="unit">Unit</label>
+                </Col>
+                <Col sm='4'>
+                  <label htmlFor="city">City</label>
+                </Col>
+              </Row>
+              <Row >
+                 <Col sm='4'>
                   <Field name="address" component="input" type="text" />
                  </Col>
-                 <Col sm='1'>
-                   <label htmlFor="unit">Unit</label>
-                 </Col>
-                 <Col sm='2'>
+                 <Col sm='4'>
                   <Field name="unit" component="input" type="text" />
                  </Col>
-                 <Col sm='1'>
-                   <label htmlFor="city">City</label>
-                 </Col>
-                 <Col sm='2'>
+                 <Col sm='4'>
                   <Field name="city" component="input" type="text" />
                  </Col>
               </Row>
-              <Row  style={{margin: 10}}>
-                <Col sm='1'>
+              <Row>
+                <Col sm='4'>
                   <label htmlFor="state">State</label>
                 </Col>
-                <Col sm='2'>
-                 <Field name="state" component="input" type="text" />
-                </Col>
-                <Col sm='1'>
+                <Col sm='4'>
                   <label htmlFor="zipcode">Zipcode</label>
                 </Col>
-                <Col sm='2'>
-                 <Field name="zipcode" component="input" type="text" />
-                </Col>
              </Row>
-          <h3>TENANT NAME</h3>
-             <Row style={{margin: 10}}>
-               <Col sm='1'>
-                 <label htmlFor="fname">First</label>
+             <Row >
+               <Col sm='4'>
+                <Field name="state" component="input" type="text" />
                </Col>
-               <Col sm='2'>
-                <Field name="fname" component="input" type="text" />
+               <Col sm='4'>
+                <Field name="zipcode" component="input" type="text" />
                </Col>
-               <Col sm='1'>
-                 <label htmlFor="lname">Last</label>
-               </Col>
-               <Col sm='2'>
-                <Field name="lname" component="input" type="text" />
-               </Col>
-            </Row>
+           </Row>
+          </div>
+          <div>
+            <h3>TENANT NAME</h3>
+               <Row>
+                 <Col sm='4'>
+                   <label htmlFor="fname">First</label>
+                 </Col>
+                 <Col sm='4'>
+                   <label htmlFor="lname">Last</label>
+                 </Col>
+                </Row>
+                <Row>
+                <Col sm='4'>
+                 <Field name="fname" component="input" type="text" />
+                </Col>
+                <Col sm='4'>
+                 <Field name="lname" component="input" type="text" />
+                </Col>
+              </Row>
+          </div>
+          <div>
           <h3>MONTHLY FINACIALS</h3>
-             <Row style={{margin: 10}}>
-               <Col sm='1'>
+             <Row >
+               <Col sm='4'>
                  <label htmlFor="mortgage">Mortgage</label>
                </Col>
-               <Col sm='2'>
-                <Field name="mortgage" component="input" type="text" />
-               </Col>
-               <Col sm='1'>
+               <Col sm='4'>
                  <label htmlFor="property_tax">Tax</label>
                </Col>
-               <Col sm='2'>
-                <Field name="property_tax" component="input" type="text" />
-               </Col>
-               <Col sm='1'>
+               <Col sm='4'>
                  <label htmlFor="property_insurance">Insurance</label>
                </Col>
-               <Col sm='2'>
-                <Field name="property_insurance" component="input" type="text" />
-               </Col>
             </Row>
-            <Row style={{margin: 10}}>
+            <Row>
+              <Col sm='4'>
+               <Field name="mortgage" component="input" type="text" />
+              </Col>
+              <Col sm='4'>
+               <Field name="property_tax" component="input" type="text" />
+              </Col>
+              <Col sm='4'>
+               <Field name="property_insurance" component="input" type="text" />
+              </Col>
+            </Row>
+            <Row >
               <Col sm='1'>
                 <label htmlFor="rent_amount">Rent</label>
               </Col>
-              <Col sm='2'>
-               <Field name="rent_amount" component="input" type="text" />
-              </Col>
            </Row>
-         <h3>LEASE</h3>
-            <Row style={{margin: 10}}>
-              <Col sm='1'>
-                <label htmlFor="lease_start_date">Start</label>
-              </Col>
-              <Col sm='2'>
-               <Field name="lease_start_date" component="input" type="date" />
-              </Col>
-              <Col sm='1'>
-                <label htmlFor="lease_end_date">Start</label>
-              </Col>
-              <Col sm='2'>
-               <Field name="lease_end_date" component="input" type="date" />
-              </Col>
-           </Row>
-           <h3>REPAIRS</h3>
-             <Row style={{margin: 10}}>
-               <Col sm='1'>
-                   <label><Field name="repairs" component="input" type="radio" value="true"/> Yes</label>
-                 </Col>
-                <Col sm='1'>
-                   <label><Field name="repairs" component="input" type="radio" value="false"/> No</label>
+           <Row  >
+             <Col sm='2'>
+              <Field name="rent_amount" component="input" type="text" />
+             </Col>
+            </Row>
+          </div>
+          <div>
+          <h3>LEASE</h3>
+             <Row >
+               <Col sm='4'>
+                 <label htmlFor="lease_start_date">Start</label>
                </Col>
-               <Col sm='2'>
+               <Col sm='4'>
+                 <label htmlFor="lease_end_date">Start</label>
+               </Col>
+              </Row>
+              <Row >
+                <Col sm='4'>
+                 <Field name="lease_start_date" component="input" type="date" />
+                </Col>
+                <Col sm='4'>
+                 <Field name="lease_end_date" component="input" type="date" />
+                </Col>
+              </Row>
+          </div>
+          <div>
+          <h3>REPAIRS</h3>
+            <Row >
+              <Col sm='1'>
+                  <label><Field name="repairs" component="input" type="radio" value="true"/> Yes</label>
+                </Col>
+               <Col sm='1'>
+                  <label><Field name="repairs" component="input" type="radio" value="false"/> No</label>
+              </Col>
+            </Row>
+            <Row >
+               <Col sm='4'>
                  <label htmlFor="repair_amount">Cost</label>
                </Col>
-               <Col sm='3'>
-                <Field name="repair_amount" component="input" type="text" />
+                 <Col sm='4'>
+                 <label htmlFor="repair_description">Description</label>
                </Col>
-             </Row>
-              <Row style={{margin: 10}}>
-                <Col sm='1'>
-                  <label htmlFor="repair_description">Description</label>
+            </Row>
+            <Row>
+                <Col sm='4'>
+                 <Field name="repair_amount" component="input" type="text" />
                 </Col>
-                <Col sm='10'>
+                <Col sm='6'>
                  <Field name="repair_description" component="textarea" type="text" />
                 </Col>
-             </Row>
-             <Row>
-              <Col sm='6'>
-                <Button
-                    style={{backgroundColor: 'white'}}
-                    size="sm"
-                    outline
-                    color="success"
-                    type="submit">Submit
-                </Button>
-              </Col>
-             </Row>
+            </Row>
+          </div>
+          <div>
+          <Row>
+           <Col sm='6'>
+             <Button
+                 style={{backgroundColor: 'white'}}
+                 size="sm"
+                 outline
+                 color="success"
+                 type="submit">Submit
+             </Button>
+           </Col>
+          </Row>
+          </div>     
         </Form>
-        <Button
-          href='./dash'
-          style={{backgroundColor: 'white'}}
-          size="sm"
-          outline
-          color="primary"
-          >Dasboard
-        </Button>
-    </Container>
+      </div>
     )
   }
 }
