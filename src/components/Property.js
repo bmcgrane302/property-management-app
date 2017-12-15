@@ -14,7 +14,7 @@ class Property extends Component {
 
     return (
       <div>
-        <Card style={{marginTop: 25, marginBottom: 5, borderColor: '#515960'}}>
+        <Card className='shadow' style={{marginTop: 25, marginBottom: 5, borderColor: '#515960'}}>
         <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
           <Row >
             <Col sm='6'>
@@ -116,7 +116,7 @@ class Property extends Component {
               <CardSubtitle>{this.props.property.repair_description}</CardSubtitle>
             </Col>
           </Row>
-            <Button
+            <Button 
               size="sm" outline color="danger"
               onClick={()=> this.props.removeProperty(this.props.property.id)}
             >delete

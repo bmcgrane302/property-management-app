@@ -42,7 +42,9 @@ class AddPropForm extends Component {
 
 
   <Container >
-    <Card style={{marginTop: 100, padding: 20, borderColor: '#515960', backgroundColor: '#515960' }}>
+   
+    <Card className='shadow'
+       style={{marginTop: 100, padding: 20, borderColor: '#515960', backgroundColor: '#515960' }}>
       <CardBody>
          <Form onSubmit={this.handleSubmit}>
          <Row>

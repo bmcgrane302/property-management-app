@@ -49,7 +49,7 @@ class Notifications extends Component {
 
     return (
       <div>
-        <Card style={{marginBottom: 30, borderColor: '#515960'}}>
+        <Card  className='shadow' style={{marginBottom: 30, borderColor: '#515960'}}>
           <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
             <CardTitle >Rent Status</CardTitle>
             <Row>
@@ -79,7 +79,7 @@ class Notifications extends Component {
           </CardBody>
         </Card>
 
-        <Card style={{marginBottom: 30, borderColor: '#515960'}}>
+        <Card className='shadow' style={{marginBottom: 30, borderColor: '#515960'}}>
            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
              <CardTitle>Repairs: {listRepairItems}</CardTitle>
            </CardBody>
@@ -95,7 +95,7 @@ class Notifications extends Component {
            </CardBody>
         </Card>
 
-        <Card style={{marginBottom: 30, borderColor: '#515960'}}>
+        <Card className='shadow' style={{marginBottom: 30, borderColor: '#515960'}}>
            <CardBody style= {{backgroundColor: '#515960', color: 'white'}}>
              <CardTitle>Renewal Notices: {listRenewalItems}</CardTitle>
            </CardBody>

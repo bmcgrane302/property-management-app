@@ -26,7 +26,7 @@ class RenewalItem extends Component {
                  size="sm"
                  outline
                  color="success">
-                 sent</Button>
+                 send</Button>
              </Col>
           </Row>
 

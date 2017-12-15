@@ -5,6 +5,7 @@ import RentStatus from './RentStatus';
 import Notifications from './Notifications';
 import TopNav from './TopNav';
 import AddPropForm from './AddPropForm';
+import BottomNav from './BottomNav';
 import { Container, Row, Col, InputGroup, Input, Button, Card } from 'reactstrap';
 
 
@@ -29,7 +30,7 @@ class Dashboard extends Component {
 
            <Col key={property.id} md={12}>
             <Property property={property}/>
-            <Button
+            <Button className='shadow'
               style= {{backgroundColor: '#515960', color: 'white'}}
               size="sm" block
               onClick={() => this.props.history.push('/update/' + property.id)}
@@ -46,7 +47,7 @@ class Dashboard extends Component {
           <Col sm='7'>
             <Container>
               <InputGroup >
-                <Input
+                <Input className='shadow'
                   style={{borderColor: '#515960'}}
                   onChange={this.handleChange} type="search"
                   placeholder="search for property" />
@@ -58,6 +59,7 @@ class Dashboard extends Component {
             <Notifications />
           </Col>
         </Row>
+        <BottomNav />
       </Container>
     )
   }

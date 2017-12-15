@@ -5,7 +5,7 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 class TopNav extends Component {
   render () {
     return (
-      <div>
+      <div style={{margin: 20}}>
         <Navbar color="faded" light>
            <NavbarBrand href="/add" className="mr-auto">Create Property</NavbarBrand>
            <NavbarBrand href="/" className="mr-auto">Home</NavbarBrand>

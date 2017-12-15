@@ -120,22 +120,18 @@ class EditProperty extends Component {
            </Row>
            <h3>REPAIRS</h3>
              <Row style={{margin: 10}}>
-               <Col sm='2'>
-                 <label htmlFor="repairs">Repairs</label>
+               <Col sm='1'>
+                   <label><Field name="repairs" component="input" type="radio" value="true"/> Yes</label>
+                 </Col>
+                <Col sm='1'>
+                   <label><Field name="repairs" component="input" type="radio" value="false"/> No</label>
                </Col>
-                 <Col sm='1'>
-                  <Field name="repairs" component="select">
-                     <option></option>
-                     <option value="true">Yes</option>
-                     <option value="false">No</option>
-                   </Field>
-                 </Col>
-                 <Col sm='1'>
-                   <label htmlFor="repair_amount">Cost</label>
-                 </Col>
-                 <Col sm='3'>
-                  <Field name="repair_amount" component="input" type="text" />
-                 </Col>
+               <Col sm='2'>
+                 <label htmlFor="repair_amount">Cost</label>
+               </Col>
+               <Col sm='3'>
+                <Field name="repair_amount" component="input" type="text" />
+               </Col>
              </Row>
               <Row style={{margin: 10}}>
                 <Col sm='1'>
@@ -145,8 +141,26 @@ class EditProperty extends Component {
                  <Field name="repair_description" component="textarea" type="text" />
                 </Col>
              </Row>
-         <button type="submit">Submit</button>
+             <Row>
+              <Col sm='6'>
+                <Button
+                    style={{backgroundColor: 'white'}}
+                    size="sm"
+                    outline
+                    color="success"
+                    type="submit">Submit
+                </Button>
+              </Col>
+             </Row>
         </Form>
+        <Button
+          href='./dash'
+          style={{backgroundColor: 'white'}}
+          size="sm"
+          outline
+          color="primary"
+          >Dasboard
+        </Button>
     </Container>
     )
   }
