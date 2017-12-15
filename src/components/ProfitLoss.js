@@ -12,6 +12,8 @@ class ProfitLoss extends Component {
     let filterYtdRent= this.props.properties.reduce((acc,item)=> acc + Number(item.ytd_rent), 0)
     let filterYtdRepairs= this.props.properties.reduce((acc,item)=> acc + Number(item.ytd_repairs), 0)
     let totalRev = filterYtdRent-filterYtdMortgage-filterYtdPropTax-filterYtdPropInsur-filterYtdRepairs;
+
+    console.log('all totals', filterYtdMortgage, filterYtdPropTax, filterYtdPropTax, filterYtdRent, filterYtdRepairs);
     console.log('mortgage totalRev', totalRev);
 
     return (
@@ -47,7 +49,7 @@ class ProfitLoss extends Component {
             </tr>
             <tr>
               <td>Total Profit</td>
-              <td style={{color: 'green' }}>${totalRev}</td>
+              <td style={{color: 'green' }}>${totalRev.toFixed(2)}</td>
             </tr>
           </tbody>
         </Table>
@@ -64,7 +66,7 @@ class ProfitLoss extends Component {
           </Col>
         </Row>
       </div>
-    
+
    </div>
     )
   }

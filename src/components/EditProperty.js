@@ -23,8 +23,8 @@ class EditProperty extends Component {
 
     return (
      <div >
-      <Container>
-       <Card className="shadow"  >
+      <Container >
+       <Card className="shadow">
        <CardBody >
         <Form onSubmit={handleSubmit(this.editProperty)} >
           <div className='editProp'>
