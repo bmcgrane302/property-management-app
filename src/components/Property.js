@@ -18,10 +18,10 @@ class Property extends Component {
         <CardBody  style= {{backgroundColor: '#515960', color: 'white'}}>
           <Row >
             <Col sm='6'>
-              <CardTitle>{this.props.property.address}  {this.props.property.unit} </CardTitle>
+              <CardTitle>{this.props.property.address.toUpperCase()}  {this.props.property.unit} </CardTitle>
             </Col>
             <Col sm='6'>
-              <CardTitle>{this.props.property.city} {this.props.property.state} {this.props.property.zipcode} </CardTitle>
+              <CardTitle>{this.props.property.city.toUpperCase()} {this.props.property.state.toUpperCase()} {this.props.property.zipcode} </CardTitle>
             </Col>
           </Row>
         </CardBody>
@@ -72,7 +72,7 @@ class Property extends Component {
               <CardSubtitle>Lease start date:</CardSubtitle>
             </Col>
             <Col sm='8'>
-              <CardSubtitle>{this.props.property.lease_start_date}</CardSubtitle>
+              <CardSubtitle>{this.props.property.lease_start_date.slice(0,10)}</CardSubtitle>
             </Col>
           </Row>
           <Row style={{paddingBottom: 10}}>
@@ -80,7 +80,7 @@ class Property extends Component {
               <CardSubtitle>Lease end date: </CardSubtitle>
             </Col>
             <Col sm='8'>
-              <CardSubtitle>{this.props.property.lease_end_date}</CardSubtitle>
+              <CardSubtitle>{this.props.property.lease_end_date.slice(0,10)}</CardSubtitle>
             </Col>
           </Row>
           <Row style={{paddingBottom: 10}}>
