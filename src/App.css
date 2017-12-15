@@ -10,9 +10,9 @@ box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
   background-size: cover;
   border-width:2px;
   border-bottom-style:solid;
-  height: 400px;
+  height: 410px;
   width: 100%;
-  padding-top: 280px;
+  padding-top: 320px;
   z-index: 300px;
 
 }
@@ -21,15 +21,15 @@ box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
   background: url(./splash2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 400px;
+  height: 410px;
   width: 100%;
 }
 
 .logo {
-  background-color: white;
+  background-color: #e7e6ec;
   border: solid;
   border-width: 2px;
-  height: 250px;
+  height: 180px;
   width: 250px;
   border-radius: 0px;
   margin-left: 40%;
@@ -38,14 +38,16 @@ box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.75);
 }
 
 .centerLogo{
-  margin-left: 9%;
-  margin-right: 12%;
-  padding-top: 55px;
+  font-family: 'Special Elite', cursive;
+  margin-left: 10%;
+  margin-right: 25%;
+  padding-top: 35px;
 }
 
 .enterButton{
-  margin-left: 32%;
-  margin-right: 32%;
+  font-family: 'Special Elite', cursive;
+  margin-left: 30%;
+  margin-right: 25%;
   padding-top: 20px;
 }
 

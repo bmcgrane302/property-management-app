@@ -5,10 +5,10 @@ class SplashPage extends Component {
   render () {
     return (
       <div>
-        <div className = "splashPage1">
-            <div className="logo">
+        <div className = "splashPage1 shadow">
+            <div className="logo shadow">
               <h1 className='centerLogo'>LANDLORD</h1>
-              <h4 className='enterButton'><a href='/dash'>ENTER</a></h4>
+               <Button style={{color: 'black'}} href='/dash' className='enterButton' color="white" size="lg" >ENTER</Button>
             </div>
         </div>
         <div className = "splashPage2">

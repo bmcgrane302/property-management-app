@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import BottomNav from './BottomNav';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText, Table } from 'reactstrap';
 
@@ -65,7 +64,7 @@ class ProfitLoss extends Component {
           </Col>
         </Row>
       </div>
-    <BottomNav />
+    
    </div>
     )
   }

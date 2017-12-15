@@ -53,7 +53,7 @@ class Dashboard extends Component {
                   onChange={this.handleChange} type="search"
                   placeholder="search for property" />
               </InputGroup>
-            </Container>
+            </Container >
              {propertyList}
           </Col>
           <Col sm='5'>
