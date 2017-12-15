@@ -41,6 +41,7 @@ class Dashboard extends Component {
      })
 
     return (
+      <div className='dashboard'>
       <Container>
         <TopNav />
         <Row>
@@ -61,6 +62,7 @@ class Dashboard extends Component {
         </Row>
         <BottomNav />
       </Container>
+      </div>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import BottomNav from './BottomNav';
 import { Container, Row, Col, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Form, FormGroup, Label, Input, FormText, Table } from 'reactstrap';
 
@@ -15,10 +16,10 @@ class ProfitLoss extends Component {
     console.log('mortgage totalRev', totalRev);
 
     return (
-
-      <Card style={{borderColor: '#515960', margin: 100, padding: 50, backgroundColor:'#515960'}}>
-        <Table hover  style={{backgroundColor: 'white'}}>
-          <thead style= {{backgroundColor: '#272b30', color: 'white'}}>
+      <div>
+        <div className='pnlPage'>
+        <Table  className='shadow' hover  style={{backgroundColor: 'white'}}>
+          <thead style= {{backgroundColor: '#515960', color: 'white'}}>
             <tr>
               <th>Year To Date</th>
               <th>Amount</th>
@@ -46,7 +47,7 @@ class ProfitLoss extends Component {
               <td style={{color: 'red' }}>${filterYtdRepairs.toFixed(2)}</td>
             </tr>
             <tr>
-              <td>Total</td>
+              <td>Total Profit</td>
               <td style={{color: 'green' }}>${totalRev}</td>
             </tr>
           </tbody>
@@ -59,12 +60,13 @@ class ProfitLoss extends Component {
               size="sm"
               outline
               color="primary"
-              >Dasboard
+              >Dashboard
             </Button>
           </Col>
         </Row>
-
-     </Card>
+      </div>
+    <BottomNav />
+   </div>
     )
   }
 }

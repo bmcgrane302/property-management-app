@@ -40,9 +40,8 @@ class AddPropForm extends Component {
 
     return (
 
-
+<div>
   <Container >
-   
     <Card className='shadow'
        style={{marginTop: 100, padding: 20, borderColor: '#515960', backgroundColor: '#515960' }}>
       <CardBody>
@@ -229,7 +228,7 @@ class AddPropForm extends Component {
       </CardBody>
      </Card>
    </Container>
-
+</div>
     )
   }
 }
