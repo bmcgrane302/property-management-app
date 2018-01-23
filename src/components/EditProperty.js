@@ -141,7 +141,7 @@ class EditProperty extends Component {
                  <label htmlFor="lease_start_date">Start</label>
                </Col>
                <Col sm='4'>
-                 <label htmlFor="lease_end_date">Start</label>
+                 <label htmlFor="lease_end_date">End</label>
                </Col>
               </Row>
               <Row >

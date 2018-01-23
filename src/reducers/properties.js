@@ -34,6 +34,10 @@ export default(state=[], action) => {
     case RENT_PAID_PENDING:
      return state;
     case RENT_PAID_SUCCESS:
+        let newState = state.filter((item,i)=> state[i].id === action.payload.data[0].id);
+        let rent = newState[0].rent_amount;
+        console.log('rent paid', newState);
+        console.log("action state", rent);
      return [...action.payload.data];
     case EDIT_PROPERTY_PENDING:
      return state;
@@ -42,8 +46,6 @@ export default(state=[], action) => {
     case REPAIR_NEEDED_PENDING:
      return state;
     case REPAIR_NEEDED_SUCCESS:
-    console.log('work motherfucker', action.payload.data);
-    console.log("action state", state);
      return [...action.payload.data];
     default:
      return state;
