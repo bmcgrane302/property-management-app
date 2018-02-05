@@ -62,10 +62,10 @@ export const editProperty = (property) => {
   }
 }
 
-export const repairComplete = (id) => {
+export const repairComplete = (id, newYtdRepairs) => {
   return async (dispatch) => {
     dispatch({type: REPAIR_COMPLETE_PENDING})
-    let properties = await axios.patch(`http://localhost:8000/removerepair/${id}`)
+    let properties = await axios.patch(`http://localhost:8000/removerepair/${id}`, {ytd_repairs: newYtdRepairs})
     dispatch({
       type: REPAIR_COMPLETE_SUCCESS,
       payload: properties

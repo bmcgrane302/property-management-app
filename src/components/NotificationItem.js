@@ -7,9 +7,16 @@ import { repairComplete } from '../actions/properties';
 
 class NotificationItem extends Component {
 
+  state = {
+    ytd_repairs:''
+  }
+
   handleClick = (e) => {
     e.preventDefault()
-    this.props.repairComplete(this.props.repair.id)
+    let newYtdRepairs = (Number(this.props.repair.repair_amount) + Number(this.props.repair.ytd_repairs)).toFixed(2)
+    this.props.repairComplete(this.props.repair.id, newYtdRepairs)
+    console.log('repair amount',  newYtdRepairs);
+
   }
 
   render () {
