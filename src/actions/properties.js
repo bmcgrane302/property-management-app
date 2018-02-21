@@ -94,10 +94,15 @@ export const renewalRemoved = (id) => {
   }
 }
 
-export const rentPaid = (id, newYtdRent, newYtdMortgage) => {
+export const rentPaid = (id, newYtdRent, newYtdMortgage, newYtdInsurance, newYtdTax) => {
   return async (dispatch) => {
     dispatch({type: RENT_PAID_PENDING})
-    let properties = await axios.patch(`http://localhost:8000/paid/${id}`,{ytd_rent: newYtdRent, ytd_mortgage: newYtdMortgage})
+    let properties = await axios.patch(`http://localhost:8000/paid/${id}`,
+      {ytd_rent: newYtdRent,
+       ytd_mortgage: newYtdMortgage,
+       ytd_prop_ins: newYtdInsurance,
+       ytd_prop_tax: newYtdTax
+     })
     dispatch({
       type:RENT_PAID_SUCCESS,
       payload: properties

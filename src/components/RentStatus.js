@@ -13,10 +13,14 @@ class RentStatus extends Component {
 
     let newYtdMortgage = (Number(this.props.property.mortgage) + Number(this.props.property.ytd_mortgage)).toFixed(2)
 
-    console.log('mortgage', newYtdMortgage);
+    let newYtdInsurance = (Number(this.props.property.property_insurance) + Number(this.props.property.ytd_prop_ins)).toFixed(2)
 
-    this.props.rentPaid(this.props.property.id, newYtdRent, newYtdMortgage)
-  }
+    let newYtdTax = (Number(this.props.property.property_tax) + Number(this.props.property.ytd_prop_tax)).toFixed(2)
+
+    console.log('testing', newYtdTax);
+
+    this.props.rentPaid(this.props.property.id, newYtdRent, newYtdMortgage, newYtdInsurance, newYtdTax)
+    }
 
   render () {
 
