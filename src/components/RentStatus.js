@@ -9,8 +9,13 @@ class RentStatus extends Component {
 
   handleClick = (e) => {
     e.preventDefault()
-    this.props.rentPaid(this.props.property.id)
+    let newYtdRent = (Number(this.props.property.rent_amount) + Number(this.props.property.ytd_rent)).toFixed(2)
 
+    let newYtdMortgage = (Number(this.props.property.mortgage) + Number(this.props.property.ytd_mortgage)).toFixed(2)
+
+    console.log('mortgage', newYtdMortgage);
+
+    this.props.rentPaid(this.props.property.id, newYtdRent, newYtdMortgage)
   }
 
   render () {

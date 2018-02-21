@@ -36,8 +36,6 @@ export default(state=[], action) => {
     case RENT_PAID_SUCCESS:
         let newState = state.filter((item,i)=> state[i].id === action.payload.data[0].id);
         let rent = newState[0].rent_amount;
-        console.log('rent paid', newState);
-        console.log("action state", rent);
      return [...action.payload.data];
     case EDIT_PROPERTY_PENDING:
      return state;

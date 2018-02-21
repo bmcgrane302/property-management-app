@@ -15,7 +15,6 @@ class NotificationItem extends Component {
     e.preventDefault()
     let newYtdRepairs = (Number(this.props.repair.repair_amount) + Number(this.props.repair.ytd_repairs)).toFixed(2)
     this.props.repairComplete(this.props.repair.id, newYtdRepairs)
-    console.log('repair amount',  newYtdRepairs);
 
   }
 
